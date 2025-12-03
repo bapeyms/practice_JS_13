@@ -259,15 +259,12 @@
                     this.currentUser.balance = this.form.balance.value;
                     this.currentUser.email = this.form.email.value;
                     this.currentUser.age = this.form.age.value;
+                    console.log("Selected user: ", this.currentUser);
                     alert("Saved!");
                 }
                 else{
-                    this.currentUser.name.first = "";
-                    this.currentUser.name.last = "";
-                    this.currentUser.company = "";
-                    this.currentUser.balance = "";
-                    this.currentUser.email = "";
-                    this.currentUser.age = "";
+                    this.fillForm(this.currentUser);
+                    console.log("Changes are discarded");
                     alert("Not saved");
                 }}
             }
