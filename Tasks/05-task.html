@@ -275,14 +275,13 @@
 
             deleteForm(users, listService){
                 let index = users.indexOf(this.currentUser);
-                if (index !== -1){
-                    users.splice(index, 1);
-                    console.log("Deleted!");
-                }
+                users.splice(index, 1);
+                console.log("Deleted!");
+                
                 this.form.reset();
                 this.currentUser = null;
                 listService.listElement.innerHTML = "";
-                new ListService(users, ListService.listElement, x => x.name.first + x.name.last);
+                new ListService(users, listService.listElement, x => x.name.first + x.name.last);
                 alert("Deleted!");
             }
         }
